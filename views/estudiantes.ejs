@@ -1,0 +1,34 @@
+<h2 class="pb-4" >Estudiantes</h2>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 mb-4">
+    <table >
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Carnet</th>
+                <th>Pagos</th>
+                <th>Grado</th>
+                <th>Mensualidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(estudiantes != '') { %>
+                <% estudiantes.forEach(function(estudiante, index) { %>
+                    <tr>
+                        <td><%- estudiante.nombres %></td>
+                        <td><%- estudiante.apellidos %></td>
+                        <td><%- estudiante.carnet %></td>
+                        <td><%- estudiante.grado %></td>
+                        <td><%- estudiante.cuota %></td>
+                        <td>
+                            <a href="/pagos/<%- estudiante.carnet %>" class="col tex-center category_link">Listar</a>
+                            <a href="/Nuevopago/<%- estudiante.carnet %>" class="col tex-center category_link">Nuevo</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+    </table>
+    
+</div>
